@@ -1,0 +1,11 @@
+cliente_id,nome,email,data_cadastro,cidade,estado
+1,Ana Souza,ana@email.com,2024-01-10,São Paulo,SP
+2,Carlos Lima,carlos@email.com,2024-02-15,Rio de Janeiro,RJ
+3,Mariana Alves,mariana@email.com,2024-03-20,Belo Horizonte,MG
+4,João Pereira,joao@email.com,2024-04-05,Curitiba,PR
+5,Fernanda Costa,fernanda@email.com,2024-05-12,Salvador,BA
+6,Lucas Martins,lucas@email.com,2024-06-18,São Paulo,SP
+7,Juliana Rocha,juliana@email.com,2024-07-22,Fortaleza,CE
+8,Bruno Mendes,bruno@email.com,2024-08-30,Recife,PE
+9,Patricia Gomes,patricia@email.com,2024-09-14,Porto Alegre,RS
+10,Rafael Dias,rafael@email.com,2024-10-01,Manaus,AM
