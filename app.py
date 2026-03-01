@@ -30,13 +30,17 @@ def pagina_home():
     with col1:
         st.title("Desafios SQL")
         st.markdown("""
-    Este site foi desenvolvido com o objetivo de oferecer **desafios interativos**
-    para o *Curso de SQL com Aplicação a Problemas de Negócios*.
+    Este site foi desenvolvido para oferecer desafios práticos de SQL,
+    compondo a parte aplicada do *Curso de SQL com Aplicação a Problemas de Negócios*.
 
-    O curso é uma iniciativa do **Grupo de Processamento e ANálise de DAdos (PANDA)**
-    da UFSCar e tem como foco aplicar consultas SQL na resolução de problemas
-    reais de negócio, desenvolvendo raciocínio analítico e habilidades práticas
-    em manipulação de dados.
+    O objetivo do curso é ensinar os fundamentos da linguagem SQL,
+    capacitando os estudantes a compreender e utilizar suas principais funções
+    e, além dio, aplicá-los na *resolução de problemas **reais** de negócio*.
+                    
+    A iniciativa é do Grupo de Processamento e Análise de Dados (PANDA)
+    da Universidade Federal de São Carlos (UFSCar) e busca integrar teoria e prática,
+    desenvolvendo raciocínio analítico e habilidades essenciais em manipulação e
+    análise de dados.
 
     Utilize a barra lateral para navegar entre os desafios!
 
