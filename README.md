@@ -39,6 +39,7 @@ plataforma-sql-panda/
 
 ## ✅ TO-DO
 
+- Melhorar design das páginas de módulos
 - Atualizar esquema do banco de dados e adicionar ao README
 - Adicionar mais exercícios
 - Melhorar requirements.txt
