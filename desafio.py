@@ -11,10 +11,9 @@ def exibir_desafio_sql(dic):
         - resposta_sql: str
     """
 
-    st.header(dic['titulo'])
+    st.header("💻 Desafio: " + dic['titulo'])
 
-    # ---------- ENUNCIADO ----------
-    st.subheader("Desafio:")
+    # enunciado
     st.write(dic['enunciado'])
 
     # ---------- BOTÃO POP-UP COM IMAGEM ----------
@@ -47,14 +46,14 @@ def exibir_desafio_sql(dic):
                 conn = sqlite3.connect("dados/dados.db")
 
                 df = pd.read_sql_query(input_sql, conn)
-                st.dataframe(df)
-
                 conn.close()
 
                 # ---------- VALIDAÇÃO ----------
                 if df.reset_index(drop=True).equals(resposta_df):
                     st.success("✅ Parabéns! Você acertou o desafio!")
+                    st.dataframe(df)
                 else:
                     st.error("❌ Ops! Tente novamente.")
+                    st.dataframe(df)
             except Exception as e:
                 st.error(f"Erro ao executar SQL: {e}")

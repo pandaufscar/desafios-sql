@@ -2,7 +2,7 @@ import streamlit as st
 
 from desafio import exibir_desafio_sql
 
-import desafios.fundamentos.exc1 as exc1
+import desafios.fundamentos as fundamentos
 
 st.set_page_config(
     page_title="Desafios SQL",
@@ -10,6 +10,15 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed"
 )
+
+st.markdown("""
+    <style>
+        .block-container {
+            max-width: 900px;
+            margin: auto;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 # =====================================================
 # PÁGINAS (FUNÇÕES)
@@ -19,7 +28,7 @@ def pagina_home():
     col1, col2 = st.columns([4, 1])  # ajusta proporção conforme necessário
 
     with col1:
-        st.title("Desafios Interativos de SQL")
+        st.title("Desafios SQL")
         st.markdown("""
     Este site foi desenvolvido com o objetivo de oferecer **desafios interativos**
     para o *Curso de SQL com Aplicação a Problemas de Negócios*.
@@ -43,20 +52,23 @@ def pagina_home():
     st.markdown("""
               # Base de dados  
                 """)
+    
+    st.image("schema.png")
 
 def pagina_fundamentos():
     st.header("Módulo: Fundamentos")
 
-    exercicio = st.selectbox(
+    desafio = st.selectbox(
         "Escolha o desafio:",
-        ["Exercício 1", "Exercício 2"]
+        [dic["titulo"] for dic in fundamentos.dics]
     )
 
-    if exercicio == "Exercício 1":
-        exibir_desafio_sql(exc1.dic)
-    elif exercicio == "Exercício 2":
-        #exercicio2()
-        x = 1
+    desafio_dict = next(
+    d for d in fundamentos.dics
+    if d["titulo"] == desafio
+    )
+
+    exibir_desafio_sql(desafio_dict)
 
 def pagina_joins():
     st.header("Módulo: Joins")
