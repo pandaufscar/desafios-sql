@@ -13,7 +13,8 @@ dic1 = {
     "titulo": titulo,
     "enunciado": enunciado,
     "imagem_esquema": imagem_esquema,
-    "resposta_sql": resposta_sql
+    "resposta_sql": resposta_sql,
+    "ordem": False
 }
 
 titulo = "Produtos com estoque baixo"
@@ -28,7 +29,8 @@ dic2 = {
     "titulo": titulo,
     "enunciado": enunciado,
     "imagem_esquema": imagem_esquema,
-    "resposta_sql": resposta_sql
+    "resposta_sql": resposta_sql,
+    "ordem": False
 }
 
 titulo = "Clientes nascidos no século 21"
@@ -43,7 +45,8 @@ dic3 = {
     "titulo": titulo,
     "enunciado": enunciado,
     "imagem_esquema": imagem_esquema,
-    "resposta_sql": resposta_sql
+    "resposta_sql": resposta_sql,
+    "ordem": False
 }
 
 dics = [dic1, dic2, dic3]

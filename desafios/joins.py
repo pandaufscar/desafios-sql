@@ -11,7 +11,8 @@ dic1 = {
     "titulo": titulo,
     "enunciado": enunciado,
     "imagem_esquema": imagem_esquema,
-    "resposta_sql": resposta_sql
+    "resposta_sql": resposta_sql,
+    "ordem": False
 }
 
 dics = [dic1]

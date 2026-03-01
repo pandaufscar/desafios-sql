@@ -2,6 +2,90 @@ import streamlit as st
 import pandas as pd
 import sqlite3
 
+def validar_resposta(
+    df_usuario: pd.DataFrame,
+    df_resposta: pd.DataFrame,
+    ordem_linhas: bool = False
+) -> bool:
+    """
+    Compara dois DataFrames
+    
+    Parameters
+    ----------
+    df_usuario : DataFrame retornado pelo aluno
+    df_resposta : DataFrame esperado
+    ordem_linhas : bool
+        Se True, a ordem das linhas deve ser igual.
+        Se False, a ordem das linhas será ignorada.
+    """
+
+    # Resetar índices
+    df_u = df_usuario.reset_index(drop=True).copy()
+    df_r = df_resposta.reset_index(drop=True).copy()
+
+    # Testa mesma dimensão
+    if df_u.shape[1] != df_r.shape[1]:
+        return False
+    
+    # Percorre todas as colunas da resposta, até achar alguma igual,
+    #       ignorando os nomes das colunas,
+    #       mas levado em consideração a ordem das linhas. 
+    if ordem_linhas:
+        for col_r in df_r.columns:
+
+            encontrou_coluna = False
+
+            for col_u in df_u.columns:
+
+                if df_r[col_r].equals(df_u[col_u]):
+                    encontrou_coluna = True
+                    break
+
+
+            if not encontrou_coluna:
+                return False
+            
+    # Percorre todas as colunas da resposta, até achar alguma igual,
+    #       ignorando os nomes das colunas,
+    #       mas levado em consideração a ordem das linhas. 
+    if ordem_linhas:
+        for col_r in df_r.columns:
+
+            encontrou_coluna = False
+
+            for col_u in df_u.columns:
+
+                if df_r[col_r].reset_index(drop=True).equals(df_u[col_u].reset_index(drop=True)):
+                    encontrou_coluna = True
+                    break
+
+
+            if not encontrou_coluna:
+                return False
+            
+    # Percorre todas as colunas da resposta, até achar alguma igual,
+    #       ignorando os nomes das colunas,
+    #       ignorando a ordem das linhas.        
+    else:
+        for col_r in df_r.columns:
+
+            encontrou_coluna = False
+
+            for col_u in df_u.columns:
+
+                # ordena para ignorar ordem das linhas
+                if df_r[col_r].sort_values().reset_index(drop=True).equals(df_u[col_u].sort_values().reset_index(drop=True)):
+                    encontrou_coluna = True
+                    break
+
+
+            if not encontrou_coluna:
+                return False
+            
+    return True          
+
+   
+
 def exibir_desafio_sql(dic):
     """
     dic: dict com as chaves:
@@ -9,6 +93,7 @@ def exibir_desafio_sql(dic):
         - enunciado: str
         - imagem_esquema: str (caminho da imagem)
         - resposta_sql: str
+        - ordem: bool
     """
 
     st.header("💻 Desafio: " + dic['titulo'])
@@ -49,7 +134,7 @@ def exibir_desafio_sql(dic):
                 conn.close()
 
                 # ---------- VALIDAÇÃO ----------
-                if df.reset_index(drop=True).equals(resposta_df):
+                if validar_resposta(df, resposta_df, dic['ordem']):
                     st.success("✅ Parabéns! Você acertou o desafio!")
                     st.dataframe(df)
                 else:
