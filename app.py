@@ -3,6 +3,7 @@ import streamlit as st
 from desafio import exibir_desafio_sql
 
 import desafios.fundamentos as fundamentos
+import desafios.joins as joins
 
 st.set_page_config(
     page_title="Desafios SQL",
@@ -75,8 +76,19 @@ def pagina_fundamentos():
     exibir_desafio_sql(desafio_dict)
 
 def pagina_joins():
-    st.header("Módulo: Joins")
-    st.write("Aqui ficarão os exercícios de JOIN.")
+    st.header("Módulo: Jois")
+
+    desafio = st.selectbox(
+        "Escolha o desafio:",
+        [dic["titulo"] for dic in joins.dics]
+    )
+
+    desafio_dict = next(
+    d for d in joins.dics
+    if d["titulo"] == desafio
+    )
+
+    exibir_desafio_sql(desafio_dict)
 
 def pagina_agregacoes():
     st.header("Módulo: Agregações")
