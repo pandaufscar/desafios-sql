@@ -11,6 +11,7 @@ https://desafios-sql.streamlit.app/
 
 - **Foco em problemas reais de negócio**: Exercícios baseados em situações práticas, aproximando o aluno do mercado.
 - **Feedback instantâneo**: Indicação clara de acerto ou erro para acelerar o aprendizado, assim, o aluno aprende fazendo, testando e ajustando suas consultas.
+- **Feedback inteligente**: Compara a reposta do aluno com o esperado ignorando detalhes irrelevantes como: nome e ordem das colunas ou linhas.
 - **Visualização do esquema do banco**: Acesso ao diagrama da base de dados, facilitando a compreensão das tabelas, chaves e relacionamentos antes da construção das consultas.
 
 ## 🛠️ Tecnologias Utilizadas
@@ -34,3 +35,9 @@ plataforma-sql-panda/
 ├── schema.png              # ← Diagrama do banco (usado na interface)
 ├── requirements.txt
 └── README.md
+```
+
+## ✅ TO-DO
+
+- Atualizar esquema do banco de dados e adicionar ao README
+- Adicionar mais exercícios
