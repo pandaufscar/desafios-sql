@@ -116,10 +116,7 @@ def rodape():
         <div class="footer-space"></div>
 
         <div class="footer">
-            Desenvolvido por <strong>Lucas Battisti</strong> •
-            <a href="https://linktr.ee/pandaufscar" target="_blank">
-                Grupo PANDA - UFSCar
-            </a>
+            Desenvolvido por <strong>Lucas Battisti</strong>
             <br>
             <a href="https://github.com/lucas-battisti" target="_blank">🐙 GitHub</a>
             <a href="https://linkedin.com/in/lucas-battisti" target="_blank">🔗 LinkedIn</a>
