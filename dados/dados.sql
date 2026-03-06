@@ -68,3 +68,112 @@ VALUES
 (18, 'Envelope', 3, 1.00, 300),
 (19, 'Fichário', 3, 50.00, 30),
 (20, 'Etiqueta', 3, 3.00, 160);
+
+CREATE TABLE pedidos (
+    id_pedido INT PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    data_pedido DATE NOT NULL,
+    status VARCHAR(20) NOT NULL,
+
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+);
+
+INSERT INTO pedidos (id_pedido, id_cliente, data_pedido, status) VALUES
+(1, 1, '2024-01-10', 'Finalizado'),
+(2, 2, '2024-01-12', 'Finalizado'),
+(3, 3, '2024-01-15', 'Em processo'),
+(4, 4, '2024-01-18', 'Cancelado'),
+(5, 5, '2024-01-20', 'Finalizado'),
+(6, 1, '2024-02-01', 'Em processo'),
+(7, 6, '2024-02-03', 'Finalizado'),
+(8, 7, '2024-02-10', 'Em processo'),
+(9, 8, '2024-02-12', 'Finalizado'),
+(10, 9, '2024-02-15', 'Em processo'),
+(11, 10, '2024-02-18', 'Finalizado'),
+(12, 11, '2024-02-20', 'Finalizado'),
+(13, 12, '2024-02-22', 'Cancelado'),
+(14, 13, '2024-02-25', 'Finalizado'),
+(15, 14, '2024-02-27', 'Em processo'),
+(16, 15, '2024-03-01', 'Finalizado'),
+(17, 3, '2024-03-03', 'Finalizado'),
+(18, 5, '2024-03-05', 'Em processo'),
+(19, 8, '2024-03-08', 'Finalizado'),
+(20, 2, '2024-03-10', 'Finalizado');
+
+CREATE TABLE itens_pedidos (
+    id_pedido INT,
+    id_produto INT,
+    quantidade INT NOT NULL,
+    preco_unitario DECIMAL(10,2) NOT NULL,
+
+    PRIMARY KEY (id_pedido, id_produto),
+
+    FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido),
+    FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
+);
+
+INSERT INTO itens_pedidos (id_pedido, id_produto, quantidade, preco_unitario) VALUES
+(1, 1, 2, 15.00),
+(1, 2, 5, 1.50),
+(1, 3, 10, 2.50),
+(1, 4, 8, 1.50),
+(1, 5, 4, 4.00),
+
+(2, 3, 3, 2.50),
+(2, 10, 2, 8.00),
+
+(3, 7, 1, 120.00),
+
+(4, 12, 1, 30.00),
+
+(5, 14, 4, 4.00),
+(5, 18, 10, 1.00),
+(5, 3, 6, 2.50),
+(5, 11, 10, 2.50),
+(5, 15, 5, 6.00),
+
+(6, 5, 2, 4.00),
+(6, 6, 1, 2.00),
+
+(7, 8, 1, 26.00),
+(7, 9, 2, 6.50),
+
+(8, 16, 1, 20.00),
+(8, 19, 1, 50.00),
+(8, 20, 12, 3.00),
+
+(9, 1, 5, 15.00),
+(9, 2, 20, 1.50),
+
+(10, 11, 12, 2.50),
+(10, 5, 6, 4.00),
+
+(11, 3, 10, 2.50),
+(11, 18, 25, 1.00),
+
+(12, 7, 1, 120.00),
+(12, 10, 15, 8.00),
+
+(13, 16, 2, 20.00),
+(13, 14, 8, 4.00),
+
+(14, 2, 25, 1.50),
+(14, 4, 10, 1.50),
+
+(15, 17, 3, 13.00),
+(15, 18, 30, 1.00),
+
+(16, 8, 2, 26.00),
+(16, 9, 6, 6.50),
+
+(17, 1, 4, 15.00),
+(17, 3, 12, 2.50),
+
+(18, 12, 3, 30.00),
+(18, 15, 8, 6.00),
+
+(19, 5, 10, 4.00),
+(19, 6, 12, 2.00),
+
+(20, 11, 20, 2.50),
+(20, 20, 15, 3.00);
