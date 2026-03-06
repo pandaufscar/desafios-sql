@@ -100,7 +100,7 @@ INSERT INTO pedidos (id_pedido, id_cliente, data_pedido, status) VALUES
 (19, 8, '2024-03-08', 'Finalizado'),
 (20, 2, '2024-03-10', 'Finalizado');
 
-CREATE TABLE itens_pedidos (
+CREATE TABLE ItensPedidos (
     id_pedido INT,
     id_produto INT,
     quantidade INT NOT NULL,
@@ -112,7 +112,7 @@ CREATE TABLE itens_pedidos (
     FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
 );
 
-INSERT INTO itens_pedidos (id_pedido, id_produto, quantidade, preco_unitario) VALUES
+INSERT INTO ItensPedidos (id_pedido, id_produto, quantidade, preco_unitario) VALUES
 (1, 1, 2, 15.00),
 (1, 2, 5, 1.50),
 (1, 3, 10, 2.50),
