@@ -21,18 +21,31 @@ https://desafios-sql.streamlit.app/
 - **Pandas**: Manipulação e comparação de dados.
 - **SQLite3**: Banco de dados local.
 
+## 📊 Base de dados
+
+![Diagrama do Banco de dados](schema.jpg)
+
+Este banco de dados representa um sistema simples de gestão de vendas de uma papelaria. Ele armazena informações sobre clientes, produtos disponíveis, categorias de produtos e os pedidos realizados.
+
+A estrutura é composta por cinco tabelas: `Clientes`, `Produtos`, `Categorias`, `Pedidos` e `ItensPedidos`. Cada pedido feito por um cliente pode ter vários produtos diferentes. Para registrar isso, existe uma tabela chamada `ItensPedidos`, que funciona como uma lista dos produtos que fazem parte de cada pedido.
+
+Nela ficam registrados quais produtos foram comprados, em que quantidade e qual era o preço no momento da compra.
+
 ## 📁 Estrutura do Projeto
 
 ```bash
 plataforma-sql-panda/
 ├── app.py                  # ← Arquivo principal (Streamlit)
 ├── desafio.py              # ← Lógica de exibição, execução e validação
-├── fundamentos.py          # ← Desafios do módulo Fundamentos
-├── joins.py                # ← Desafios do módulo Joins (exemplo)
-├── agregacoes.py           # ← Desafios do módulo Agregações (exemplo)
+├── dados/
+│   └── fundamentos.py          # ← Desafios do módulo Fundamentos
+│   └── joins.py                # ← Desafios do módulo Joins
+│   └── agregacoes.py           # ← Desafios do módulo Agregações
 ├── dados/
 │   └── dados.db            # ← Banco SQLite com todos os dados
-├── schema.png              # ← Diagrama do banco (usado na interface)
+│   └── dados.sql           # ← Código SQLite que gera os dados e cria o dados.db
+│   └── dados.py            # ← Código Python que executa o dados.sql
+├── schema.jpg              # ← Diagrama do banco (usado na interface)
 ├── requirements.txt
 └── README.md
 ```
