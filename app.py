@@ -60,6 +60,19 @@ def pagina_home():
     
     st.image("schema.jpg")
 
+    st.markdown("""
+        Este banco de dados representa um sistema simples de gestão de vendas de
+            uma papelaria. Ele armazena informações sobre clientes, produtos disponíveis,
+            categorias de produtos e os pedidos realizados.
+                
+        A estrutura é composta por cinco tabelas: `Clientes`, `Produtos`, `Categorias`, 
+            `Pedidos` e `ItensPedidos`.Cada pedido feito por um cliente pode ter vários
+            produtos diferentes. Para registrar isso, existe uma tabela chamada
+            `ItensPedidos`, que funciona como uma lista dos produtos que fazem parte de
+            cada pedido. Nela ficam registrados quais produtos foram comprados, em que
+            quantidade e qual era o preço no momento da compra.
+                """)
+
 def pagina_fundamentos():
     st.header("Módulo: Fundamentos")
 

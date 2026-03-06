@@ -102,8 +102,8 @@ def exibir_desafio_sql(dic):
     st.write(dic['enunciado'])
 
     # ---------- BOTÃO POP-UP COM IMAGEM ----------
-    with st.expander("📊 Ver esquema da base"):
-        st.image(dic['imagem_esquema'], caption="Esquema da Base de Dados")
+    with st.expander("📊 Ver diagrama da Base de Dados"):
+        st.image(dic['imagem_esquema'], caption="Diagrama da Base de Dados")
         
 
     # --------------- RESPOSTA ---------------
