@@ -58,7 +58,7 @@ def pagina_home():
               # Base de dados  
                 """)
     
-    st.image("schema.png")
+    st.image("schema.jpg")
 
 def pagina_fundamentos():
     st.header("Módulo: Fundamentos")

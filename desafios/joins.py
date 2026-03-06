@@ -1,6 +1,6 @@
 titulo = "Produtos da categoria Escolar"
 enunciado = "Liste o nome dos produtos que pertencem à categoria Escolar."
-imagem_esquema = "schema.png"
+imagem_esquema = "schema.jpg"
 resposta_sql = """
 SELECT p.nome
 FROM produtos p

@@ -2,7 +2,7 @@ titulo = "Selecionando colunas"
 
 enunciado = "Liste o nome e a cidade de todos os clientes."
 
-imagem_esquema = "schema.png"
+imagem_esquema = "schema.jpg"
 
 resposta_sql = """
 SELECT nome, cidade
@@ -19,7 +19,7 @@ dic1 = {
 
 titulo = "Produtos com estoque baixo"
 enunciado = "Liste o nome e o estoque dos produtos com estoque menor que 50."
-imagem_esquema = "schema.png"
+imagem_esquema = "schema.jpg"
 resposta_sql = """
 SELECT nome, estoque
 FROM produtos
@@ -35,7 +35,7 @@ dic2 = {
 
 titulo = "Clientes nascidos no século 21"
 enunciado = "Liste o nome dos clientes que nasceram no século 21."
-imagem_esquema = "schema.png"
+imagem_esquema = "schema.jpg"
 resposta_sql = """
 SELECT nome
 FROM clientes
