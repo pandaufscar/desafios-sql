@@ -1,11 +1,10 @@
-titulo = "Produtos da categoria Escolar"
-enunciado = "Liste o nome dos produtos que pertencem à categoria Escolar."
+titulo = "1. Número de produtos por categoria"
+enunciado = "Calcular o número de produtos por categoria."
 imagem_esquema = "schema.jpg"
 resposta_sql = """
-SELECT p.nome
-FROM produtos p
-JOIN categorias c ON p.id_categoria = c.id_categoria
-WHERE c.nome = 'Escolar'
+SELECT nome, COUNT(*) AS quantidade_produtos
+FROM Produtos
+GROUP BY id_categoria;
 """
 dic1 = {
     "titulo": titulo,
@@ -15,4 +14,21 @@ dic1 = {
     "ordem": False
 }
 
-dics = [dic1]
+titulo = "2. Clientes recorrentes."
+enunciado = "Mostre os cliente que fizeram mais de 1 pedido, retorne o id do cliente e a quantidade de pedidos"
+imagem_esquema = "schema.jpg"
+resposta_sql = """
+SELECT id_cliente, COUNT(*) AS quantidade_pedidos
+FROM Pedidos
+GROUP BY id_cliente
+HAVING COUNT(*) > 1;
+"""
+dic2 = {
+    "titulo": titulo,
+    "enunciado": enunciado,
+    "imagem_esquema": imagem_esquema,
+    "resposta_sql": resposta_sql,
+    "ordem": False
+}
+
+dics = [dic1, dic2]

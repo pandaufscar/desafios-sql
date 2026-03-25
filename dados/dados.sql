@@ -21,7 +21,12 @@ INSERT INTO clientes (id_cliente, nome, data_nascimento, cidade, data_cadastro) 
 (12, 'Isabela Gomes', '1984-08-03', 'Campinas', '2020-12-19'),
 (13, 'Lucas Barbosa', '2001-01-25', 'Florianópolis', '2023-03-08'),
 (14, 'Julia Mendes', '1996-07-11', 'Natal', '2021-10-22'),
-(15, 'Matheus Carvalho', '1989-04-19', 'Santos', '2022-04-15');
+(15, 'Matheus Carvalho', '1989-04-19', 'Santos', '2022-04-15'),
+(16, 'Fernando Rocha', '1991-02-14', 'São Luís', '2022-11-10'),
+(17, 'Camila Teixeira', '1997-06-25', 'João Pessoa', '2023-01-18'),
+(18, 'Bruno Ribeiro', '1986-09-09', 'Maceió', '2021-08-07'),
+(19, 'Patrícia Nunes', '1999-12-30', 'Teresina', '2023-06-21'),
+(20, 'Diego Cardoso', '2003-03-03', 'Aracaju', '2022-02-28');
 
 CREATE TABLE categorias (
     id_categoria INT PRIMARY KEY,
@@ -31,7 +36,8 @@ CREATE TABLE categorias (
 INSERT INTO categorias (id_categoria, nome) VALUES
 (1, 'Escolar'),
 (2, 'Escritório'),
-(3, 'Organização');
+(3, 'Organização'),
+(4, 'Tecnologia');
 
 
 CREATE TABLE produtos (
@@ -85,7 +91,6 @@ INSERT INTO pedidos (id_pedido, id_cliente, data_pedido, status) VALUES
 (4, 4, '2024-01-18', 'Cancelado'),
 (5, 5, '2024-01-20', 'Finalizado'),
 (6, 1, '2024-02-01', 'Em processo'),
-(7, 6, '2024-02-03', 'Finalizado'),
 (8, 7, '2024-02-10', 'Em processo'),
 (9, 8, '2024-02-12', 'Finalizado'),
 (10, 9, '2024-02-15', 'Em processo'),
