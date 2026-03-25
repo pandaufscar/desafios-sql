@@ -82,10 +82,10 @@ dic5 = {
 }
 
 titulo = "6. Primeiros pedidos"
-enunciado = "Mostre os id's dos 5 primeiros pedidos feitos na livraria."
+enunciado = "Retorne os status dos 5 primeiros pedidos feitos na livraria."
 imagem_esquema = "schema.jpg"
 resposta_sql = """
-SELECT id_pedido
+SELECT status
 FROM Pedidos
 ORDER BY data_pedido
 LIMIT 5
