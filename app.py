@@ -1,5 +1,9 @@
 import streamlit as st
 
+import streamlit as st
+import pandas as pd
+import sqlite3
+
 from desafio import exibir_desafio_sql
 
 import desafios.fundamentos as fundamentos
@@ -72,6 +76,28 @@ def pagina_home():
             cada pedido. Nela ficam registrados quais produtos foram comprados, em que
             quantidade e qual era o preço no momento da compra.
                 """)
+    
+    st.markdown("""
+              # 🧠 Playground SQL
+                """)
+    
+    st.subheader("Digite sua consulta SQL abaixo:")
+    input_sql = st.text_area("Consulta SQL", height=200, placeholder="Digite o código aqui")
+
+    executar = st.button("🚀 Executar consulta", key="executar_sql")
+    st.subheader("Resultado da execução")
+    if executar:
+        try:
+            conn = sqlite3.connect("dados/dados.db")
+
+            df = pd.read_sql_query(input_sql, conn)
+            conn.close()
+
+            st.dataframe(df)
+
+        except Exception as e:
+            st.error(f"❌ Erro ao executar a consulta SQL: {e}")
+    
 
 def pagina_fundamentos():
     st.header("Módulo: Fundamentos")
