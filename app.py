@@ -7,7 +7,9 @@ import sqlite3
 from desafio import exibir_desafio_sql
 
 import desafios.fundamentos as fundamentos
+import desafios.agg as agg
 import desafios.joins as joins
+
 
 st.set_page_config(
     page_title="Desafios SQL",
@@ -114,8 +116,23 @@ def pagina_fundamentos():
 
     exibir_desafio_sql(desafio_dict)
 
+def pagina_agg():
+    st.header("Módulo: Agregações")
+
+    desafio = st.selectbox(
+        "Escolha o desafio:",
+        [dic["titulo"] for dic in agg.dics]
+    )
+
+    desafio_dict = next(
+    d for d in agg.dics
+    if d["titulo"] == desafio
+    )
+
+    exibir_desafio_sql(desafio_dict)
+
 def pagina_joins():
-    st.header("Módulo: Jois")
+    st.header("Módulo: Joins")
 
     desafio = st.selectbox(
         "Escolha o desafio:",
@@ -129,9 +146,6 @@ def pagina_joins():
 
     exibir_desafio_sql(desafio_dict)
 
-def pagina_agregacoes():
-    st.header("Módulo: Agregações")
-    st.write("Aqui ficarão os exercícios de GROUP BY, HAVING etc.")
 
 def rodape():
     st.markdown("""
@@ -181,8 +195,8 @@ def rodape():
 ROTAS = {
     "Home": pagina_home,
     "Fundamentos": pagina_fundamentos,
+    "Agregações": pagina_agg,
     "Joins": pagina_joins,
-    "Agregações": pagina_agregacoes,
 }
 
 # =====================================================
